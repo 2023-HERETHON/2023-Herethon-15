@@ -1,6 +1,5 @@
 from django.db import models
 
-# Create your models here.
 class Marker(models.Model):
     user = models.ForeignKey('user.User', on_delete=models.CASCADE) # 유저 매핑
     address = models.CharField(max_length=100) # 도로명주소

@@ -29,7 +29,8 @@ def marker_detail_view(request, pk):
             user=user,
             body=body
         )
-    # 기본 페이지 + 댓글 작성 후 기본 페이지 새로고침
+        return redirect('marker:marker_detail', pk=pk)
+    # 기본 페이지
     comments = marker.comments.all()
     print(comments)
     return render(request, 'marker/marker-detail.html', {"marker": marker, "comments": comments})
