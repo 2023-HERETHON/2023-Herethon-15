@@ -14,7 +14,7 @@ class Marker(models.Model):
     regTime = models.DateTimeField(auto_now_add=True) # 작성시간
 
 class Comment(models.Model):
-    marker = models.ForeignKey('marker.Marker', on_delete=models.CASCADE) # 마커 매핑
+    marker = models.ForeignKey('marker.Marker', on_delete=models.CASCADE, related_name="comments") # 마커 매핑
     user = models.ForeignKey('user.User', on_delete=models.CASCADE) # 유저 매핑
     body = models.CharField(max_length=200) # 내용
     regTime = models.DateTimeField(auto_now_add=True) # 작성시간
