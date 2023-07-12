@@ -21,6 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('users/', include('user.urls')),
     path('markers/', include('marker.urls')),
-    path('countermeasure/', Post, name="post"),
     path('sounds/', sounds, name="sounds"),
+    path('countermeasure/',Post, name="post"),
 ]
