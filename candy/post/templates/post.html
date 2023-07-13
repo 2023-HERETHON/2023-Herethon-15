@@ -730,6 +730,9 @@
         color: #000000;
       }
     </style>
+
+
+
     <div id="bar">
       <div id="title">대처 요령</div>
       <div id="icon">
@@ -740,15 +743,15 @@
       </div>
     </div>
     <div id="time-tap">
-      <div id="time-text">최신순</div>
+      <div id="time-text"><a href="?sort=recent" style="text-decoration:none;">최신순</a></div>
     </div>
     <div id="name-tap">
-      <div id="name-text">이름순</div>
+      <div id="name-text"><a href="?sort=name" style="text-decoration:none;">이름순</a></div>
     </div>
 
         {% for post in post.all %}
         <div id="list-one">
-        <div id="text-one"><a href="{% url 'detail' post.id %}">{{post.title}}</a></div>
+        <div id="text-one"><a href="{% url 'detail' post.id %}" style="text-decoration:none;color:black;">{{post.title}}</a></div>
          <!-- <button id="one">
         <img src="../static/images/down_line.png" />
         </button>
