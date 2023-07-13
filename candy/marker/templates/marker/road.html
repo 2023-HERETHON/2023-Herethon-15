@@ -1,0 +1,52 @@
+<!--POST로 뷰에 위도, 경도 정보 보냄-->
+<form action="{% url 'marker:markers' %}" method="post">
+  {% csrf_token %}
+  <input type="hidden" name="latitude" id="latitude" />
+  <input type="hidden" name="longitude" id="longitude" />
+  <button type="submit">주변 상황 보기</button>
+</form>
+<!--받아온 정보가 있다면 출력-->
+{% for marker in markers %}
+<div>
+  <div>안전캔디: {{ marker.rating }}</div>
+  <div>유동인구: {{ marker.population }}</div>
+  <div>가로등: {{ marker.street_lamp }}</div>
+  <div>작성일: {{ marker.regTime }}</div>
+  <a href="http://127.0.0.1:8000/markers/{{marker.pk}}">상세보기</a>
+</div>
+{% endfor %}
+
+<script>
+  var options = {
+    center: new kakao.maps.LatLng(33.450701, 126.570667),
+    level: 5,
+  };
+
+  var map = new kakao.maps.Map(document.getElementById("map"), options);
+  var marker;
+
+  kakao.maps.event.addListener(map, "click", function (mouseEvent) {
+    var latlng = mouseEvent.latLng;
+    var latitude = latlng.getLat();
+    var longitude = latlng.getLng();
+
+    // 위도, 경도 값을 입력 폼에 설정
+    document.getElementById("latitude").value = latitude;
+    document.getElementById("longitude").value = longitude;
+
+    var imageSrc = "/static/images/road.png";
+    // 마커 이미지의 이미지 크기 입니다
+    var imageSize = new kakao.maps.Size(26, 32);
+
+    // 마커 이미지를 생성합니다
+    var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
+    // 마커 추가
+    marker = new kakao.maps.Marker({
+      position: latlng,
+      image: markerImage,
+    });
+    console.log(latitude);
+    console.log(longitude);
+    marker.setMap(map);
+  });
+</script>
