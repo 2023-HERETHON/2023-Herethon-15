@@ -48,9 +48,11 @@ def marker_edit_view(request):
     if request.method == 'GET':
         lat = request.GET.get('lat')
         lng = request.GET.get('lng')
+        address = request.GET.get('address')
         data = {
             'lat' : lat,
-            'lng' : lng
+            'lng' : lng,
+            'address' : address,
         }
         return render(request, './marker/marker-edit.html', data)
     # 작성 클릭 시
