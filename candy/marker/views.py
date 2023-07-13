@@ -120,7 +120,7 @@ def marker_detail_update_page(request, pk):
 # 지도 마커 수정 (post)
 def marker_detail_update(request,pk):
     marker_update=get_object_or_404(Marker, pk=pk)
-    #marker_update.address = request.POST['address']
+    # marker_update.address = request.POST['address']
     marker_update.street_lamp=request.POST['street_lamp']
     marker_update.population=request.POST['population']
     marker_update.rating=request.POST['rating']
