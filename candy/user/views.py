@@ -49,4 +49,4 @@ class KakaoCallback(View):
         # 로그인
         user = User.objects.get(kakaoId=user_info['id'])
         login(request, user, 'user.auth.MyBackend')
-        return redirect(f'{uri}/')
+        return redirect(f'{uri}/markers/')
