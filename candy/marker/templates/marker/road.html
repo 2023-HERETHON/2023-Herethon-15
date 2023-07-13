@@ -129,6 +129,6 @@
     geocoder.coord2Address(coord.getLng(), coord.getLat(), callback);
   }
   function submitAddress() {
-    location.href = "edit/lat=" + latitude + "/lng=" + longitude;
+    location.href = "edit/?lat=" + latitude + "&lng=" + longitude;
   }
 </script>
