@@ -30,6 +30,7 @@
 <h5 style="text-align: center">아직 작성된 골목길이 없습니다.</h5>
 {% endif %}
 <button class="edit_road" onclick="submitAddress();">작성하기</button>
+<h5 style="text-align: center; display:none;" id="alert" >지도에서 위치를 찾아 클릭해주세요.</h5>
 <script>
   var options = {
     center: new kakao.maps.LatLng(33.450701, 126.570667),
@@ -129,6 +130,10 @@
     geocoder.coord2Address(coord.getLng(), coord.getLat(), callback);
   }
   function submitAddress() {
+    if (!latitude || !longitude){
+      document.getElementById("alert").style="text-align: center; display:block; color:red;";
+      return ;
+    }
     location.href =
       "edit/?lat=" + latitude + "&lng=" + longitude + "&address=" + address;
   }
