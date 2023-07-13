@@ -17,7 +17,7 @@ def oauth_login(request):
 class Kakao(View):
     def get(self, request):
         kakao_api="https://kauth.kakao.com/oauth/authorize?response_type=code"
-        redirect_uri=f"{uri}/users/oauth/callback"
+        redirect_uri=f"{uri}/oauth/callback"
         client_id="1301c1e0e19f2a3c5b9ee4a72d7b83ef"
         return redirect(f"{kakao_api}&client_id={client_id}&redirect_uri={redirect_uri}")
 

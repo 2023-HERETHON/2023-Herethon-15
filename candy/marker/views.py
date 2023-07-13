@@ -10,8 +10,8 @@ def marker_view(request):
     if request.method == 'GET':
         return render(request, 'marker/marker.html', {})
     # 지도 클릭 (마커 리스트 + 기본 페이지)
-    elif request.method == 'POST':
-        status = int(request.POST.get('status', 0))
+    if request.method == 'POST':
+        status = int(request.POST.get('status', 1))
         latitude = float(request.POST.get('latitude', 33.450701))
         longitude = float(request.POST.get('longitude', 126.570667))
         filtered_markers = Marker.objects.filter(
