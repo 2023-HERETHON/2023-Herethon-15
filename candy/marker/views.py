@@ -27,6 +27,8 @@ def marker_detail_view(request, pk):
     marker = Marker.objects.get(pk=pk)
     # 댓글 작성
     if request.method == 'POST':
+        if not request.user.is_authenticated:
+            return redirect('marker:marker_detail', pk=pk)
         user = request.user
         body = request.POST.get('body')
         Comment.objects.create(
@@ -42,6 +44,9 @@ def marker_detail_view(request, pk):
 
 # 지도 작성 (미완성)
 def marker_edit_view(request):
+    # 미인증 유저 예외처리
+    if not request.user.is_authenticated:
+        return redirect('marker:markers')
     # 기본 페이지
     if request.method == 'GET':
         lat = request.GET.get('lat')
@@ -95,6 +100,8 @@ def marker_detail_delete(request, pk):
     # marker_delete = Marker.objects.get(pk=pk)
     try:
         marker_delete = Marker.objects.get(pk=pk)
+        if not request.user.pk == marker_delete.user.pk:
+            redirect('marker:marker_detail', pk=pk)
         marker_delete.delete()
     except Marker.DoesNotExist:
         marker_delete = None
@@ -104,6 +111,8 @@ def marker_detail_delete(request, pk):
 def marker_detail_update_page(request, pk):
     try:
         marker_update = get_object_or_404(Marker, pk=pk)
+        if not request.user.pk == marker_update.user.pk:
+            redirect('marker:marker_detail', pk=pk)
     except Marker.DoesNotExist:
         marker_update=None
     return render(request,'marker/update.html', {'marker':marker_update})
