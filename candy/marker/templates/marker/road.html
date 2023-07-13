@@ -29,13 +29,7 @@
 {% endfor %} {% else %}
 <h5>아직 작성된 골목길이 없습니다.</h5>
 {% endif %}
-<form id="addressForm" method="post">
-  {% csrf_token %}
-  <input type="hidden" id="addressInput" name="address" value="" />
-  <button class="edit_road" onclick="submitAddress(0); return false;">
-    작성하기
-  </button>
-</form>
+<button class="edit_road" onclick="submitAddress();">작성하기</button>
 <script>
   var options = {
     center: new kakao.maps.LatLng(33.450701, 126.570667),
@@ -91,6 +85,7 @@
 
     // 위도, 경도 값을 입력 폼에 설정
     document.getElementById("latitude").value = latitude;
+    console.log(latitude);
     document.getElementById("longitude").value = longitude;
 
     var imageSrc = "/static/images/road.png";
@@ -136,8 +131,6 @@
     geocoder.coord2Address(coord.getLng(), coord.getLat(), callback);
   }
   function submitAddress() {
-    var addressInput = document.getElementById("AddressInput");
-    addressInput.value = address;
-    document.getElementById("addressForm").submit();
+    location.href = "edit/";
   }
 </script>
