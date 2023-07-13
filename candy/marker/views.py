@@ -83,9 +83,10 @@ def marker_edit_view(request):
 def marker_police_view(request):
     return render(request, 'marker/police.html')
 
+
 def marker_detail_delete(request, pk):
-    #marker_delete=get_object_or_404(Marker, pk=pk)
-    #marker_delete = Marker.objects.get(pk=pk)
+    # marker_delete=get_object_or_404(Marker, pk=pk)
+    # marker_delete = Marker.objects.get(pk=pk)
     try:
         marker_delete = Marker.objects.get(pk=pk)
         marker_delete.delete()
