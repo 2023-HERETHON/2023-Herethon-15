@@ -19,4 +19,4 @@ def Post_detail(request, pk):
     post_detail=get_object_or_404(Posting, pk=pk)
     return render(request, 'post_detail.html', {'post_detail':post_detail, "title" : "대처 요령"})
 def sounds(request):
-    return render(request, 'sounds.html', {})
+    return render(request, 'sounds.html', {"title":"사이렌"})
