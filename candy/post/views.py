@@ -7,7 +7,7 @@ def Post(request):
     # http://127.0.0.1:8000/countermeasure/?sort=recent
     if sort_condition=="recent":
         posts=Posting.objects.order_by('-upload_time')
-        return render(request, 'post.html', {'post': posts})
+        return render(request, 'post.html', {'post': posts, "title":"대처 요령"})
     # http://127.0.0.1:8000/countermeasure/?sort=name
     elif sort_condition=="name":
         posts=Posting.objects.order_by('title')
