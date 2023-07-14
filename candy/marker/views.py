@@ -3,7 +3,6 @@ import requests
 from .models import Marker, Comment
 from django.utils import timezone
 
-# 지도 기본
 def marker_view(request):
     # 기본 페이지
     if request.method == 'GET':
@@ -18,6 +17,7 @@ def marker_view(request):
             longitude__range=(longitude - 0.002, longitude + 0.002)
         )
         return render(request, 'marker/marker.html', {"markers": filtered_markers, "status": status})
+
 
 # 지도 상세
 def marker_detail_view(request, pk):
