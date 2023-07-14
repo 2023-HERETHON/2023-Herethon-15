@@ -3,20 +3,13 @@ import requests
 from .models import Marker, Comment
 from django.utils import timezone
 
-# 지도 기본
 def marker_view(request):
     # 기본 페이지
     if request.method == 'GET':
-        request.session['status'] = 0 
-        return render(request, 'marker/marker.html', { "status": 0 })
+        return render(request, 'marker/marker.html', {})
     # 지도 클릭 (마커 리스트 + 기본 페이지)
     if request.method == 'POST':
-        status = request.POST.get('status')
-        request.session['status'] = status 
-        # 마커 안 눌렀을 때 예외처리
-        if not request.POST.get('latitude'):
-            status = request.session.get('status', 0)
-            return render(request, 'marker/marker.html', {"status" : status})
+        status = int(request.POST.get('status', 1))
         latitude = float(request.POST.get('latitude', 33.450701))
         longitude = float(request.POST.get('longitude', 126.570667))
         filtered_markers = Marker.objects.filter(
@@ -24,6 +17,7 @@ def marker_view(request):
             longitude__range=(longitude - 0.002, longitude + 0.002)
         )
         return render(request, 'marker/marker.html', {"markers": filtered_markers, "status": status})
+
 
 # 지도 상세
 def marker_detail_view(request, pk):
