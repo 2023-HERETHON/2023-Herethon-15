@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>대처요령</title>
+  </head>
+  <body style="background-color: #aaaaaa">
+    <style>
+      #container {
+        position: relative;
+        width: 375px;
+        height: 812px;
+        background: #ffffff;
+        margin: 0 auto;
+      }
+
+      #bar {
+        /* 상단바 */
+
+        position: absolute;
+        width: 375px;
+        height: 90px;
+        left: 0px;
+        top: 0px;
+        text-align: center;
+
+        background: #ffffff;
+      }
+
+      #title {
+        /* 대처 요령 */
+
+        position: absolute;
+        width: 189px;
+        height: 31px;
+        left: 93px;
+        top: 30px;
+        text-align: center;
+
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 30px;
+        /* identical to box height */
+        text-align: center;
+
+        color: #000000;
+      }
+
+      #icon {
+        /* 심볼 */
+
+        position: absolute;
+        width: 34px;
+        height: 34px;
+        left: 23px;
+        top: 28px;
+      }
+
+      #list {
+        /* Group 1 */
+
+        position: absolute;
+        width: 24px;
+        height: 17px;
+        left: 330px;
+        top: 30px;
+      }
+
+      #time-tap {
+        /* Rectangle 1693 */
+
+        position: relative;
+        left: 2%;
+        top: 160px;
+        width: 90px;
+        height: 35px;
+
+        /* Neutral/100 */
+        background: #ffffff;
+        box-shadow: 0px 3px 14px rgba(74, 58, 255, 0.03),
+          0px -2px 4px rgba(20, 20, 43, 0.02),
+          0px 10px 24px rgba(20, 20, 43, 0.04);
+        border-radius: 10px;
+        background: transparent;
+        border: none;
+      }
+
+      #time-text {
+        /* 최신순 */
+
+        position: relative;
+        width: 57px;
+        height: 19px;
+        left: 15px;
+        top: 10px;
+
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 18px;
+        /* identical to box height */
+        text-align: center;
+
+        color: #000000;
+      }
+
+      #name-tap {
+        /* Rectangle 1694 */
+
+        position: relative;
+        left: 80px;
+        top: 125px;
+        width: 90px;
+        height: 35px;
+        border: none;
+
+        background: #d3c3f7;
+        box-shadow: 0px 3px 14px rgba(74, 58, 255, 0.03),
+          0px -2px 4px rgba(20, 20, 43, 0.02),
+          0px 10px 24px rgba(20, 20, 43, 0.04);
+        border-radius: 10px;
+      }
+
+      #name-text {
+        /* 이름순 */
+
+        position: absolute;
+        width: 57px;
+        height: 19px;
+        left: 15px;
+        top: 10px;
+
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 18px;
+        /* identical to box height */
+        text-align: center;
+
+        color: #ffffff;
+      }
+
+      #list-one {
+        /* Rectangle 29 */
+
+        box-sizing: border-box;
+
+        position: relative;
+        left: 8%;
+        top: 180px;
+        width: 320px;
+        height: 50px;
+
+        /* Neutral/100 */
+        background: #ffffff;
+        /* Neutral/300 */
+        border: 1px solid #eff0f7;
+        box-shadow: 0px 8px 25px rgba(13, 10, 44, 0.06);
+        border-radius: 10px;
+      }
+
+      #text-one {
+        /* 대중교통 내 성범죄 대처요령 */
+
+        position: relative;
+        width: 263px;
+        height: 19px;
+        left: 8%;
+        top: 15px;
+
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 22px;
+        text-align: center;
+
+        color: #000000;
+      }
+
+      #one {
+        /* down_line */
+
+        position: relative;
+        left: 280px;
+        bottom: 10%;
+
+        /* Grey/01 */
+        background: transparent;
+        border: none;
+
+        transform: rotate(360deg);
+      }
+
+      #list-two {
+        /* Rectangle 30 */
+
+        box-sizing: border-box;
+
+        position: relative;
+        left: 2%;
+        top: 200px;
+        width: 320px;
+        height: 50px;
+
+        /* Neutral/100 */
+        background: #ffffff;
+        /* Neutral/300 */
+        border: 1px solid #eff0f7;
+        box-shadow: 0px 8px 25px rgba(13, 10, 44, 0.06);
+        border-radius: 10px;
+      }
+
+      #text-two {
+        /* 스토킹 대처요령 */
+
+        position: absolute;
+        width: 263px;
+        height: 19px;
+        left: 8%;
+        top: 15px;
+
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 22px;
+        text-align: center;
+
+        color: #000000;
+      }
+
+      #two {
+        /* down_line */
+
+        position: relative;
+        left: 280px;
+        top: 15px;
+        /* Grey/01 */
+        background: transparent;
+        border: none;
+        transform: rotate(360deg);
+      }
+
+      #list-three {
+        /* Rectangle 31 */
+
+        box-sizing: border-box;
+
+        position: relative;
+        left: 2%;
+        top: 220px;
+        width: 320px;
+        height: 50px;
+
+        /* Neutral/100 */
+        background: #ffffff;
+        /* Neutral/300 */
+        border: 1px solid #eff0f7;
+        box-shadow: 0px 8px 25px rgba(13, 10, 44, 0.06);
+        border-radius: 10px;
+      }
+
+      #text-three {
+        /* 스토킹 가해 신고 후 추가 보호 */
+
+        position: absolute;
+        width: 263px;
+        height: 19px;
+        left: 8%;
+        top: 15px;
+
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 22px;
+        text-align: center;
+
+        color: #000000;
+      }
+
+      #three {
+        /* down_line */
+
+        position: relative;
+        left: 280px;
+        top: 15px;
+
+        /* Grey/01 */
+        background: transparent;
+        border: none;
+        transform: rotate(360deg);
+      }
+
+      #list-four {
+        /* Rectangle 32 */
+
+        box-sizing: border-box;
+
+        position: relative;
+        left: 2%;
+        top: 240px;
+        width: 320px;
+        height: 50px;
+
+        /* Neutral/100 */
+        background: #ffffff;
+        /* Neutral/300 */
+        border: 1px solid #eff0f7;
+        box-shadow: 0px 8px 25px rgba(13, 10, 44, 0.06);
+        border-radius: 10px;
+      }
+
+      #text-four {
+        /* 스토킹 피해자 지원 제도 */
+
+        position: absolute;
+        width: 263px;
+        height: 19px;
+        left: 8%;
+        top: 15px;
+
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 22px;
+        text-align: center;
+
+        color: #000000;
+      }
+
+      #four {
+        position: relative;
+        left: 280px;
+        top: 18%;
+
+        /* Grey/01 */
+        background: transparent;
+        border: none;
+        transform: rotate(360deg);
+      }
+
+      #list-five {
+        /* Rectangle 33 */
+
+        box-sizing: border-box;
+
+        position: relative;
+        left: 2%;
+        top: 260px;
+        width: 320px;
+        height: 50px;
+
+        /* Neutral/100 */
+        background: #ffffff;
+        /* Neutral/300 */
+        border: 1px solid #eff0f7;
+        box-shadow: 0px 8px 25px rgba(13, 10, 44, 0.06);
+        border-radius: 10px;
+      }
+
+      #text-five {
+        /* 불법 촬영 등에 대한 처벌 */
+
+        position: absolute;
+        width: 263px;
+        height: 19px;
+        left: 8%;
+        top: 15px;
+
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 22px;
+        text-align: center;
+
+        color: #000000;
+      }
+
+      #five {
+        /* down_line */
+
+        position: relative;
+        left: 280px;
+        top: 20%;
+
+        /* Grey/01 */
+        background: transparent;
+        border: none;
+        transform: rotate(360deg);
+      }
+
+      #page-one {
+        /* 1 ㅣ 2 */
+
+        position: relative;
+        width: 183px;
+        height: 48px;
+        left: 80px;
+        top: 300px;
+
+        font-family: "Noto Sans Symbols";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 33px;
+        text-align: center;
+
+        color: #5530e9;
+      }
+
+      #page-two {
+        /* 1 ㅣ 2 */
+
+        position: relative;
+        width: 183px;
+        height: 48px;
+        left: 100px;
+        top: 252px;
+
+        font-family: "Noto Sans Symbols";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 33px;
+        text-align: center;
+
+        color: #000000;
+      }
+
+      footer {
+        bottom: 0;
+        left: 0;
+        height: 227px;
+        width: 375px;
+        background-color: #ddd;
+        padding-top: 80px;
+      }
+
+      #bye {
+        font-size: 25px;
+      }
+
+      #table {
+        font-size: 15px;
+      }
+
+      #copyright {
+        font-size: 5px;
+      }
+    </style>
+    <div id="container">
+      <div id="bar">
+        <div id="title">대처 요령</div>
+        <div id="icon">
+          <img src="../static/images/심볼 (1).png" />
+        </div>
+        <div id="list">
+          <img src="../static/images/Group 1 (1).png" />
+        </div>
+      </div>
+      <button id="time-tap">
+        <div id="time-text">최신순</div>
+      </button>
+      <button id="name-tap">
+        <div id="name-text">이름순</div>
+      </button>
+      <div id="list-one">
+        <div id="text-one">대중교통 내 성범죄 대처요령</div>
+        <button id="one">
+          <img src="../static/images/down_line.png" />
+        </button>
+      </div>
+      <div id="list-one">
+        <div id="text-one">스토킹 대처요령</div>
+        <button id="one">
+          <img src="../static/images/down_line.png" />
+        </button>
+      </div>
+      <div id="list-one">
+        <div id="text-one">스토킹 가해 신고 후 추가 보호</div>
+        <button id="one">
+          <img src="../static/images/down_line.png" />
+        </button>
+      </div>
+      <div id="list-one">
+        <div id="text-one">스토킹 피해자 지원 제도</div>
+        <button id="one">
+          <img src="../static/images/down_line.png" />
+        </button>
+      </div>
+      <div id="list-one">
+        <div id="text-one">불법 촬영 등에 대한 처벌</div>
+        <button id="one">
+          <img src="../static/images/down_line.png" />
+        </button>
+      </div>
+      <div id="page-one">1</div>
+      <div id="page-two">2</div>
+      <div class="footer">
+        <br />
+        <a id="bye">
+          안전히 가세요, 여러분! <br />
+          HERETHON 15 <br />
+        </a>
+        <br />
+        <table id="table" style="width: 375px" text-align="left">
+          <tr>
+            <td>디자인</td>
+            <td>김채현</td>
+          </tr>
+          <tr>
+            <td>Front-end</td>
+            <td>김채현 김소영 박상아</td>
+          </tr>
+          <tr>
+            <td>Back-end</td>
+            <td>양수빈 이지원</td>
+          </tr>
+        </table>
+        <br />
+        <a id="copyright"
+          >Copyright © 2022 BRIX Templates | All Rights Reserved</a
+        >
+      </div>
+    </div>
+  </body>
+</html>
