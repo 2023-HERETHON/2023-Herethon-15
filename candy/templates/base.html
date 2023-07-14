@@ -3,7 +3,7 @@
   <head>
     {% load static %}
     <meta charset="UTF-8" />
-    <title>{% block head_title %}내 귀가 캔디{% endblock %}</title>
+    <title>내 귀가 캔디</title>
     <link
       href="/static/images/symbol.png"
       rel="shortcut icon"
@@ -18,8 +18,7 @@
   {% include 'head.html' %}
   <body>
     <div class="content">
-      <div>{% include 'header.html' %}</div>
-      <div>{% block content %} {% endblock %}</div>
+      {% include 'header.html' %} {% block content %} {% endblock %}
       <div>{% include 'footer.html' %}</div>
     </div>
   </body>
