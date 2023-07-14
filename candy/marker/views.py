@@ -38,7 +38,7 @@ def marker_detail_view(request, pk):
     # 기본 페이지
     comments = marker.comments.all()
     print(comments)
-    return render(request, 'marker:marker_detail', {"marker": marker, "comments": comments, "title":"골목길 조회하기" })
+    return render(request, 'marker/marker-detail.html', {"marker": marker, "comments": comments, "title":"골목길 조회하기" })
 
 # 지도 작성
 def marker_edit_view(request):
