@@ -7,7 +7,7 @@ from django.utils import timezone
 def marker_view(request):
     # 기본 페이지
     if request.method == 'GET':
-        return render(request, 'marker/marker.html', {"title":"Map"})
+        return render(request, 'marker/marker.html', {"title":"Map", "status":0})
     # 지도 클릭 (마커 리스트 + 기본 페이지)
     if request.method == 'POST':
         status = int(request.POST.get('status', 1))
@@ -88,7 +88,7 @@ def marker_edit_view(request):
             body=body,
             image=image
         )
-        return redirect('marker:markers')
+        return render(request, 'marker/marker.html', {"status": 1, "title":"Map"})
 
 # police 조회
 def marker_police_view(request):
