@@ -21,6 +21,7 @@ def marker_view(request):
 
 
 
+
 # 지도 상세
 def marker_detail_view(request, pk):
     marker = Marker.objects.get(pk=pk)
@@ -57,7 +58,7 @@ def marker_edit_view(request):
             'lng': lng,
             'address': address,
         }
-        return render(request, './marker/marker-edit.html', data, {"title":"골목길 작성하기"})
+        return render(request, 'marker/marker-edit.html', {"data":data, "title":"골목길 작성하기"})
 
     # 작성 클릭 시
     if request.method == 'POST':
