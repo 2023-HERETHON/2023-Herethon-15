@@ -22,7 +22,7 @@ def marker_view(request):
         page_number = request.GET.get('page')  # 현재 페이지 번호 가져오기
         page_markers = paginator.get_page(page_number)  # 해당 페이지에 해당하는 마커 가져오기
 
-        return render(request, 'marker/marker.html', {"markers": page_markers, "status": status})
+        return render(request, 'marker/marker.html', {"markers": page_markers, "status": status,"title":"Map"})
 
 
 # 지도 상세
@@ -43,9 +43,9 @@ def marker_detail_view(request, pk):
     # 기본 페이지
     comments = marker.comments.all()
     print(comments)
-    return render(request, 'marker/marker-detail.html', {"marker": marker, "comments": comments})
+    return render(request, 'marker/marker-detail.html', {"marker": marker, "comments": comments, "title":"골목길 조회하기" })
 
-# 지도 작성 (미완성)
+# 지도 작성
 def marker_edit_view(request):
     # 미인증 유저 예외처리
     if not request.user.is_authenticated:
@@ -61,7 +61,7 @@ def marker_edit_view(request):
             'lng': lng,
             'address': address,
         }
-        return render(request, './marker/marker-edit.html', data)
+        return render(request, './marker/marker-edit.html', data, {"title":"골목길 작성하기"})
 
     # 작성 클릭 시
     if request.method == 'POST':
@@ -95,7 +95,7 @@ def marker_edit_view(request):
 
 # police 조회
 def marker_police_view(request):
-    return render(request, 'marker/police.html')
+    return render(request, 'marker/police.html', {"title":"Map"})
 
 # 지도 마커 삭제
 def marker_detail_delete(request, pk):
@@ -118,7 +118,7 @@ def marker_detail_update_page(request, pk):
             redirect('marker:marker_detail', pk=pk)
     except Marker.DoesNotExist:
         marker_update=None
-    return render(request,'marker/update.html', {'marker':marker_update})
+    return render(request,'marker/update.html', {'marker':marker_update, "title":"골목길 수정하기"})
 
 # 지도 마커 수정 (post)
 def marker_detail_update(request,pk):
