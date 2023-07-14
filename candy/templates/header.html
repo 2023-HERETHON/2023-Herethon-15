@@ -1,15 +1,17 @@
+{% load static %}
 <div class="header">
   <div
     style="
-      width: 355px;
+      width: 315px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       height: 90px;
+      margin: 0 auto;
     "
   >
     <img
-      src="../static/images/symbol.png"
+      src="{% static '/images/symbol.png' %}"
       width="34px"
       height="34px"
       onclick="goMain()"
@@ -19,7 +21,7 @@
         color: #000;
         text-align: center;
         font-family: Inter;
-        font-size: 25px;
+        font-size: 20px;
         font-style: normal;
         font-weight: 400;
         line-height: normal;
@@ -28,7 +30,7 @@
       {{title}}
     </p>
     <img
-      src="../static/images/menu.png"
+      src="{% static '/images/menu.png' %}"
       width="24px"
       height="17px"
       onclick="toggleNav()"
@@ -84,7 +86,7 @@
 
 <script>
   function goMain() {
-    location.href = "";
+    location.href = "{% url 'marker:markers' %}";
   }
   var navstatus = 0;
   function toggleNav() {
