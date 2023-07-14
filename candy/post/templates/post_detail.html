@@ -1,10 +1,12 @@
-<!DOCTYPE html>
+{% extends 'base.html' %} {% block content %}
+<!--<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-  </head>
+  </head>-->
+
   <body>
     <style>
       #container {
@@ -281,256 +283,9 @@
         color: #000000;
       }
 
-      #footer {
-        /* 푸터 */
 
-        position: absolute;
-        width: 375px;
-        height: 227px;
-        left: -1px;
-        top: 585px;
-
-        /* 디자인 */
-
-        position: absolute;
-        width: 39px;
-        height: 19px;
-        left: 28px;
-        top: 104px;
-
-        font-family: "Inter";
-        font-style: normal;
-        font-weight: 400;
-        font-size: 250px;
-        line-height: 15px;
-
-        color: #000000;
-
-        /* 김채현 */
-
-        position: absolute;
-        width: 39px;
-        height: 19px;
-        left: 109px;
-        top: 104px;
-
-        font-family: "Inter";
-        font-style: normal;
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 15px;
-
-        color: #000000;
-
-        /* 김채현 */
-
-        position: absolute;
-        width: 39px;
-        height: 19px;
-        left: 109px;
-        top: 141px;
-
-        font-family: "Inter";
-        font-style: normal;
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 15px;
-
-        color: #000000;
-
-        /* 양수빈 */
-
-        position: absolute;
-        width: 39px;
-        height: 19px;
-        left: 109px;
-        top: 176px;
-
-        font-family: "Inter";
-        font-style: normal;
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 15px;
-
-        color: #000000;
-
-        /* 이지원 */
-
-        position: absolute;
-        width: 39px;
-        height: 19px;
-        left: 158px;
-        top: 176px;
-
-        font-family: "Inter";
-        font-style: normal;
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 15px;
-
-        color: #000000;
-
-        /* 김소영 */
-
-        position: absolute;
-        width: 39px;
-        height: 19px;
-        left: 158px;
-        top: 141px;
-
-        font-family: "Inter";
-        font-style: normal;
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 15px;
-
-        color: #000000;
-
-        /* 박상아 */
-
-        position: absolute;
-        width: 39px;
-        height: 19px;
-        left: 207px;
-        top: 141px;
-
-        font-family: "Inter";
-        font-style: normal;
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 15px;
-
-        color: #000000;
-
-        /* 프론트 */
-
-        position: absolute;
-        width: 62px;
-        height: 19px;
-        left: 28px;
-        top: 139px;
-
-        font-family: "Inter";
-        font-style: normal;
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 15px;
-
-        color: #000000;
-
-        /* Back-end */
-
-        position: absolute;
-        width: 57px;
-        height: 19px;
-        left: 28px;
-        top: 176px;
-
-        font-family: "Inter";
-        font-style: normal;
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 15px;
-
-        color: #000000;
-
-        /* HERETHON 15 */
-
-        position: absolute;
-        width: 189px;
-        height: 31px;
-        left: 24px;
-        top: 57px;
-
-        font-family: "Inter";
-        font-style: normal;
-        font-weight: 400;
-        font-size: 25px;
-        line-height: 30px;
-        /* identical to box height */
-
-        color: #000000;
-
-        /* 안전히 가세요, 여러분! */
-
-        position: absolute;
-        width: 253px;
-        height: 31px;
-        left: 24px;
-        top: 25px;
-
-        font-family: "Inter";
-        font-style: normal;
-        font-weight: 400;
-        font-size: 25px;
-        line-height: 30px;
-        /* identical to box height */
-
-        color: #000000;
-
-        /* Copyright */
-
-        position: absolute;
-        width: 126px;
-        height: 20px;
-        left: 28px;
-        top: 200px;
-
-        font-family: "DM Sans";
-        font-style: normal;
-        font-weight: 400;
-        font-size: 5px;
-        line-height: 20px;
-        /* identical to box height, or 400% */
-
-        /* Neutral/600 */
-        color: #6f6c90;
-      }
-
-      #footer-text {
-        /* HERETHON 15 */
-
-        position: relative;
-        width: 400px;
-        height: 31px;
-        left: 24px;
-        top: 600px;
-
-        font-family: "Inter";
-        font-style: normal;
-        font-weight: 400;
-        font-size: 25px;
-        line-height: 30px;
-        /* identical to box height */
-
-        color: #000000;
-      }
-
-      #footer-name {
-        position: relative;
-        width: 300px;
-        height: 19px;
-        left: 25px;
-        top: 650px;
-
-        font-family: "Inter";
-        font-style: normal;
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 15px;
-
-        color: #000000;
-      }
     </style>
-    <div id="bar">
-      <div id="title">대처 요령</div>
-      <div id="icon">
-        <img src="../static/images/심볼.png" />
-      </div>
-      <div id="list">
-        <img src="../static/images/Group 1.png" />
-      </div>
-    </div>
+
 
     <div id="list-one">
       <div id="text-one">{{post_detail.title}}</div>
@@ -582,6 +337,9 @@
 
     <div id="page-one">1</div>
     <div id="page-two">2</div>
+</body>
+{% endblock %}
+    <!--
     <div id="footer">
       <div id="footer-text">
         안전히 가세요, 여러분!
@@ -598,4 +356,4 @@
       </div>
     </div>
   </body>
-</html>
+</html>-->
