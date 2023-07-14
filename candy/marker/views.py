@@ -17,7 +17,6 @@ def marker_view(request):
             latitude__range=(latitude - 0.002, latitude + 0.002),
             longitude__range=(longitude - 0.002, longitude + 0.002)
         )
-
         return render(request, 'marker/marker.html', {"markers": filtered_markers, "status": status})
 
 
@@ -39,7 +38,7 @@ def marker_detail_view(request, pk):
     # 기본 페이지
     comments = marker.comments.all()
     print(comments)
-    return render(request, 'marker/marker-detail.html', {"marker": marker, "comments": comments, "title":"골목길 조회하기" })
+    return render(request, 'marker:marker_detail', {"marker": marker, "comments": comments, "title":"골목길 조회하기" })
 
 # 지도 작성
 def marker_edit_view(request):
@@ -57,7 +56,7 @@ def marker_edit_view(request):
             'lng': lng,
             'address': address,
         }
-        return render(request, './marker/marker-edit.html', data, {"title":"골목길 작성하기"})
+        return render(request, 'marker/marker-edit.html', {"data":data, "title":"골목길 작성하기"})
 
     # 작성 클릭 시
     if request.method == 'POST':
