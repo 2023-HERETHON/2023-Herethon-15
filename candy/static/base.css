@@ -2,6 +2,7 @@ body {
   background-color: #aaa;
   margin: 0;
 }
+
 .content {
   background-color: #fff;
   width: 375px;
@@ -28,12 +29,10 @@ nav{
 
 .candy{
   flex: 1;
-
 }
 
 .link {
   flex:8;
-
 }
 
 .menu{
@@ -43,6 +42,5 @@ nav{
 
 section {
   width: 375px;
-
   display: flex;
 }
