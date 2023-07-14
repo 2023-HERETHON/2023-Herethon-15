@@ -1,7 +1,5 @@
 # 🍬 내 귀가 캔디
 
-### 서비스 소개 
-
 ![KakaoTalk_Photo_2023-07-15-04-02-36](https://github.com/2023-HERETHON/2023-Herethon-15/assets/86940801/4ee01c5b-3d5e-4a4e-ac2e-d11cda967d41)
 
 ```
